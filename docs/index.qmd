@@ -21,7 +21,7 @@ library(here)
 ```
 
 ```{r}
-#| fig-cap: '1947-2025 monthly Mean Sea Level in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed. [download](https://raw.githubusercontent.com/tbep-tech/sealevelrise-csap/main/docs/fig/tddat.png){target="_blank"}'
+#| fig-cap: '1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed. [download](https://raw.githubusercontent.com/tbep-tech/sealevelrise-csap/main/docs/fig/tddat.png){target="_blank"}'
 knitr::include_graphics(here('docs/fig/tddat.png'))
 ```
 
