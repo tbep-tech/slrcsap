@@ -28,7 +28,7 @@ p <- tddat |>
     axis.ticks = element_line()
   )
 
-  png(here('fig/tddat.png'), height = 3, width = 8, res = 300, units = 'in')
+  png(here('docs/fig/tddat.png'), height = 3, width = 8, res = 300, units = 'in')
   print(p)
   dev.off()
 
@@ -61,7 +61,7 @@ p <- ggplot(slrdat, aes(x = year, y = slr_ft, color = scenario, group = scenario
     legend.position = 'bottom'
   )
   
-png(here('fig/slrdat.png'), height = 4, width = 8, res = 300, units = 'in')
+png(here('docs/fig/slrdat.png'), height = 4, width = 8, res = 300, units = 'in')
 print(p)
 dev.off()
   
