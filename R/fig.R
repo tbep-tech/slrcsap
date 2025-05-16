@@ -51,7 +51,7 @@ p <- ggplot(slrdat, aes(x = year, y = slr_ft, color = scenario, group = scenario
                'NOAA Intermediate' = 'orange', 
                'NOAA Intermediate High' = 'red')
   ) +
-  scale_y_continuous(breaks = seq(0, 8, by = 1), limits = c(0, 8)) +
+  scale_y_continuous(breaks = seq(0, 6, by = 1), limits = c(0, 6)) +
   scale_x_continuous(breaks = seq(2020, 2100, by = 10)) +
   theme_minimal() + 
   theme(
