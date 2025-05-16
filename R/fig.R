@@ -15,9 +15,10 @@ p <- tddat |>
   ggplot(aes(x = date, y = msl_ft)) +
   geom_line(color = 'deepskyblue') +
   labs(
-    x = 'Date',
+    x = NULL,
     y = 'Feet (MSL)'
   ) +
+  scale_y_continuous(breaks = seq(-1, 1, by = 0.5), limits = c(-1, 1)) +
   scale_x_date(breaks = brks, date_labels = '%Y') +
   theme_minimal() + 
   theme(
