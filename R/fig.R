@@ -37,7 +37,7 @@ p <- tddat |>
 load(file = here('data/slrdat.RData'))
   
 p <- ggplot(slrdat, aes(x = year, y = slr_ft, color = scenario, group = scenario)) +
-  geom_line(size = 1) +
+  geom_line(linewidth = 1) +
   labs(
     x = NULL,
     y = 'RSLC in Feet (LMSL)', 
@@ -47,9 +47,9 @@ p <- ggplot(slrdat, aes(x = year, y = slr_ft, color = scenario, group = scenario
     caption = 'Source: https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520'
   ) +
   scale_color_manual(
-    values = c('NOAA Low' = 'deepskyblue', 
+    values = c('NOAA Intermediate Low' = 'deepskyblue', 
                'NOAA Intermediate' = 'orange', 
-               'NOAA High' = 'red')
+               'NOAA Intermediate High' = 'red')
   ) +
   scale_y_continuous(breaks = seq(0, 8, by = 1), limits = c(0, 8)) +
   scale_x_continuous(breaks = seq(2020, 2100, by = 10)) +
