@@ -1,4 +1,4 @@
-# sealevelrise-csap
+# slrcsap
 
 [![DOI](https://zenodo.org/badge/984378351.svg)](https://doi.org/10.5281/zenodo.15481861)
 
