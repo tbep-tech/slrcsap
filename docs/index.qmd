@@ -6,7 +6,7 @@ published-title: "Figures created:"
 format: 
   html:
     code-tools:
-      source: https://github.com/tbep-tech/sealevelrise-csap
+      source: https://github.com/tbep-tech/slrcsap
 editor: source
 lightbox: true
 
@@ -21,12 +21,12 @@ library(here)
 ```
 
 ```{r}
-#| fig-cap: '1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed. [download](https://raw.githubusercontent.com/tbep-tech/sealevelrise-csap/main/docs/fig/tddat.png){target="_blank"}'
+#| fig-cap: '1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed. [download](https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png){target="_blank"}'
 knitr::include_graphics(here('docs/fig/tddat.png'))
 ```
 
 ```{r}
-#| fig-cap: 'Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves. [download](https://raw.githubusercontent.com/tbep-tech/sealevelrise-csap/main/docs/fig/slrdat.png){target="_blank"}'
+#| fig-cap: 'Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves. [download](https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/slrdat.png){target="_blank"}'
 knitr::include_graphics(here('docs/fig/slrdat.png'))
 ```
 
