@@ -5,3 +5,18 @@
 [![DOI](https://zenodo.org/badge/984378351.svg)](https://doi.org/10.5281/zenodo.15481861)
 
 R package to create projections of sea level rise for the Tampa Bay region recommended by the Climate Science Advisory Panel
+
+## Installation
+
+Install the package from [r-universe](http://tbep-tech.r-universe.dev/ui/#builds) as follows. The source code is available on [GitHub](https://github.com/tbep-tech/slrcsap).
+
+```r
+# Install slrcsap in R:
+install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Load the package in an R session after installation:
+
+```r
+library(slrcsap)
+```
