@@ -1,0 +1,37 @@
+Package: slrcsap
+Title: Lightweight Tools to Create Sea Level Rise Predictions for the Tampa Bay Region
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Marcus",
+      family = "Beck",
+      role = c("aut", "cre"),
+      email = "mbeck@tbep.org",
+      comment = c(ORCID = "0000-0002-4996-0059")
+    )
+  )
+Description: Lightweight tools to download data and create plots for sea level rise predictions
+  in the Tampa Bay region.  Plots are produced to support recommendations of the Climate Science
+  Advisory Panel facilitated by the Tampa Bay Estuary Program.  Data are from NOAA Tides and 
+  Currents web page <https://tidesandcurrents.noaa.gov/> and the Interagency Sea Level Rise 
+  Scenario Tool <https://sealevel.nasa.gov/task-force-scenario-tool>. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+  R (>= 4.1)
+Imports:
+  dplyr,
+  ggplot2,
+  readxl,
+  scales, 
+  tidyr
+LazyData: true
+LazyDataCompression: xz
+VignetteBuilder: knitr
+URL: <https://github.com/tbep-tech/slrcsap>, 
+  <https://tbep-tech.github.io/slrcsap/>
+BugReports: https://github.com/tbep-tech/slrcsap/issues
+Suggests: 
+    knitr,
+    rmarkdown

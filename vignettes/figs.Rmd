@@ -1,0 +1,26 @@
+---
+title: "CSAP Figures"
+output: rmarkdown::html_vignette
+bibliography: refs.bib
+date: "`r Sys.Date()`"
+csl: stylefile.csl
+vignette: >
+  %\VignetteIndexEntry{CSAP Figures}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = F, warning = F, 
+  fig.align = 'center'
+)
+```
+
+```{r setup}
+library(slrcsap)
+```
+
+This vignette provides two figures that support the 2025 update of sea level rise projections for the Tampa Bay region.  The report was created by the Climate Science Advisory Panel (CSAP) to update recommendations from @tbep0519.  
