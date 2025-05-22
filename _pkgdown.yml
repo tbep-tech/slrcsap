@@ -6,12 +6,20 @@ navbar:
   structure:
     left:  [intro, reference, articles, news]
     right: [search, github]
+  components:
+    reference:
+      text: Functions
+      href: reference/index.html
 
 articles:
 - title: Get Started
   navbar: ~
   contents:
   - slrcsap
+- title: Articles
+  navbar: ~
+  contents: 
+  - figs
 
 reference:
 - title: Get data
