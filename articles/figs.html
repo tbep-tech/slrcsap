@@ -66,32 +66,24 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">slrcsap</span><span class="op">)</span></span></code></pre></div>
 <p>This vignette provides two figures that support the 2025 update of
 sea level rise projections for the Tampa Bay region. The report was
 created by the Climate Science Advisory Panel (CSAP) to update
 recommendations from <span class="citation">[1]</span>.</p>
 <p>The first figure shows mean monthly sea level at the St. Petersburg,
 FL tide gauge, with the seasonal cycle removed. Download the figure
-here](<a href="https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png" class="external-link uri">https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png</a>).</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+here](<a href="https://tbep-tech.github.io/slrcsap/articles/figs_files/figure-html/sealevelplot.png" class="external-link uri">https://tbep-tech.github.io/slrcsap/articles/figs_files/figure-html/sealevelplot.png</a>).</p>
 <div class="figure" style="text-align: center">
-<img src="figs_files/figure-html/unnamed-chunk-2-1.png" alt="1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed." width="2400"><p class="caption">
+<img src="figs_files/figure-html/sealevelplot-1.png" alt="1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed." width="2400"><p class="caption">
 1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide
 gauge 8726520. Seasonal cycle removed.
 </p>
 </div>
 <p>The second figure shows three sea level rise scenarios for
 St. Petersburg, FL based on regionally corrected NOAA 2022 curves.
-Download the figure <a href="https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png" class="external-link">here</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_scenario.html">get_scenario</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+Download the figure <a href="https://tbep-tech.github.io/slrcsap/articles/figs_files/figure-html/scenarioplot.png" class="external-link">here</a>.</p>
 <div class="figure" style="text-align: center">
-<img src="figs_files/figure-html/unnamed-chunk-3-1.png" alt="Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves." width="2400"><p class="caption">
+<img src="figs_files/figure-html/scenarioplot-1.png" alt="Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves." width="2400"><p class="caption">
 Graphic relative sea level change (RSLC) scenarios for St. Petersburg,
 FL, as calculated using the regionally corrected NOAA 2022 curves.
 </p>

@@ -80,7 +80,32 @@ follows. The source code is available on <a href="https://github.com/tbep-tech/s
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>text</p>
+<p>The package includes two core functions to download data and two core
+functions to plot data. The two download functions are
+<code><a href="../reference/get_sealevel.html">get_sealevel()</a></code> and <code><a href="../reference/get_scenario.html">get_scenario()</a></code> to download
+tidal gauge data and sea level rise scenario data, respectively. The
+corresponding plot functions to view data retrieved from the download
+functions are <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> and
+<code><a href="../reference/plot_scenario.html">plot_scenario()</a></code>. The content below demonstrates how to use
+each function, including the optional arguments that can be used to
+customize the output.</p>
+<p>Tidal gauge data is downloaded from the NOAA Tides and Currents
+website. The data is available for all NOAA tide gauges, but the package
+is currently set up to download data for the St. Petersburg, FL gauge
+(NOAA ID 8726520). The data is downloaded as a CSV file and then read
+into R. The data includes monthly mean sea level (MSL) values from 1947
+to the present, including a seasonal correction.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Download tidal gauge data</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt;     gauge Year Month  msl_m       date     msl_ft</span></span>
+<span><span class="co">#&gt; 1 8726520 1947     1 -0.063 1947-01-01 -0.2066929</span></span>
+<span><span class="co">#&gt; 2 8726520 1947     2 -0.132 1947-02-01 -0.4330709</span></span>
+<span><span class="co">#&gt; 3 8726520 1947     3 -0.142 1947-03-01 -0.4658793</span></span>
+<span><span class="co">#&gt; 4 8726520 1947     4 -0.150 1947-04-01 -0.4921260</span></span>
+<span><span class="co">#&gt; 5 8726520 1947     5 -0.086 1947-05-01 -0.2821522</span></span>
+<span><span class="co">#&gt; 6 8726520 1947     6 -0.064 1947-06-01 -0.2099738</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
