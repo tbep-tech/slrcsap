@@ -1,0 +1,37 @@
+---
+title: "Getting started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  warning = F, 
+  message = F, 
+  fig.align = "center"
+)
+```
+
+## Installation
+
+Install the package from [r-universe](http://tbep-tech.r-universe.dev/ui/#builds) as follows. The source code is available on [GitHub](https://github.com/tbep-tech/slrcsap).
+
+```{r eval = F}
+# Install slrcsap in R:
+install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Load the package in an R session after installation:
+
+```{r}
+library(slrcsap)
+```
+
+## Usage
+
+text

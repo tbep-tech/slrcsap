@@ -1,4 +1,24 @@
-url: ~
+url: https://github.com/tbep-tech/slrcsap
 template:
   bootstrap: 5
 
+navbar:
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [search, github]
+
+articles:
+- title: Get Started
+  navbar: ~
+  contents:
+  - tbeploads
+
+reference:
+- title: Get data
+  desc: |
+    Functions for getting data.
+  contents: starts_with('get')
+- title: Plot data
+  desc: |
+    Functions for plotting data.
+  contents: starts_with('plot')

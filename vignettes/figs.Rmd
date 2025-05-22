@@ -15,7 +15,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   message = F, warning = F, 
-  fig.align = 'center'
+  fig.align = 'center', 
+  dpi = 300
 )
 ```
 
@@ -24,3 +25,18 @@ library(slrcsap)
 ```
 
 This vignette provides two figures that support the 2025 update of sea level rise projections for the Tampa Bay region.  The report was created by the Climate Science Advisory Panel (CSAP) to update recommendations from @tbep0519.  
+
+The first figure shows mean monthly sea level at the St. Petersburg, FL tide gauge, with the seasonal cycle removed. Download the figure here](https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png).
+
+```{r, fig.width = 8, fig.height = 3, fig.cap="1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed."}}
+dat <- get_sealevel()
+plot_sealevel(dat)
+```
+
+The second figure shows three sea level rise scenarios for St. Petersburg, FL based on regionally corrected NOAA 2022 curves.  Download the figure [here](https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png). 
+
+```{r, fig.width = 8, fig.height = 4, fig.cap="Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves"}}
+dat <- get_scenario()
+plot_scenario(dat)
+```
+
