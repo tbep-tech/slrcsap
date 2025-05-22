@@ -3,4 +3,8 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   figs: figs.html
-last_built: 2025-05-22T18:42Z
+  slrcsap: slrcsap.html
+last_built: 2025-05-22T21:08Z
+urls:
+  reference: https://github.com/tbep-tech/slrcsap/reference
+  article: https://github.com/tbep-tech/slrcsap/articles

@@ -29,7 +29,8 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/slrcsap.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Functions</a></li>
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
@@ -41,7 +42,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/tbep-tech/slrcsap/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="nav-link" href="https://github.com/tbep-tech/slrcsap/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -59,7 +60,7 @@
             
             <h4 data-toc-skip class="date">2025-05-22</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/main/vignettes/figs.Rmd" class="external-link"><code>vignettes/figs.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/main/vignettes/figs.Rmd"><code>vignettes/figs.Rmd</code></a></small>
       <div class="d-none name"><code>figs.Rmd</code></div>
     </div>
 
@@ -71,6 +72,30 @@
 sea level rise projections for the Tampa Bay region. The report was
 created by the Climate Science Advisory Panel (CSAP) to update
 recommendations from <span class="citation">[1]</span>.</p>
+<p>The first figure shows mean monthly sea level at the St. Petersburg,
+FL tide gauge, with the seasonal cycle removed. Download the figure
+here](<a href="https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png" class="external-link uri">https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png</a>).</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="figs_files/figure-html/unnamed-chunk-2-1.png" alt="1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide gauge 8726520.  Seasonal cycle removed." width="2400"><p class="caption">
+1947-2025 monthly mean sea level (MSL) in St. Petersburg, FL, NOAA tide
+gauge 8726520. Seasonal cycle removed.
+</p>
+</div>
+<p>The second figure shows three sea level rise scenarios for
+St. Petersburg, FL based on regionally corrected NOAA 2022 curves.
+Download the figure <a href="https://raw.githubusercontent.com/tbep-tech/slrcsap/main/docs/fig/tddat.png" class="external-link">here</a>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_scenario.html">get_scenario</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="figs_files/figure-html/unnamed-chunk-3-1.png" alt="Graphic relative sea level change (RSLC) scenarios for St. Petersburg, FL, as calculated using the regionally corrected NOAA 2022 curves." width="2400"><p class="caption">
+Graphic relative sea level change (RSLC) scenarios for St. Petersburg,
+FL, as calculated using the regionally corrected NOAA 2022 curves.
+</p>
+</div>
 <div id="refs" class="references csl-bib-body" entry-spacing="0">
 <div id="ref-tbep0519" class="csl-entry">
 <div class="csl-left-margin">[1] </div>
