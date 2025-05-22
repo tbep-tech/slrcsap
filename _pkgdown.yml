@@ -11,7 +11,7 @@ articles:
 - title: Get Started
   navbar: ~
   contents:
-  - tbeploads
+  - slrcsap
 
 reference:
 - title: Get data
