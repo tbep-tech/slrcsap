@@ -7,7 +7,7 @@
 #' @param xrng Date, x-axis range as two values. Default is `NULL`, which uses the range of the data.
 #' @param xbrk numeric, number of x-axis breaks. Default is `10`.
 #' @param yrng numeric, y-axis range as two values. Default is `NULL`, which uses the range of the data.
-#' @param ybrk numeric, number of y-axis breaks. Default is `3`.
+#' @param ybrk numeric, number of y-axis breaks. Default is `5`.
 #'
 #' @returns a ggplot object
 #' @export
@@ -15,7 +15,7 @@
 #' @examples
 #' dat <- get_sealevel()
 #' plot_sealevel(dat)
-plot_sealevel <- function(dat, col = 'deepskyblue', units = 'ft', caption = TRUE, xrng = NULL, xbrk = 10, yrng = NULL, ybrk = 3) {
+plot_sealevel <- function(dat, col = 'deepskyblue', units = 'ft', caption = TRUE, xrng = NULL, xbrk = 10, yrng = NULL, ybrk = 5) {
   
   units <- match.arg(units, c('ft', 'm'))
   

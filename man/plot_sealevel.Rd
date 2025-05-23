@@ -12,7 +12,7 @@ plot_sealevel(
   xrng = NULL,
   xbrk = 10,
   yrng = NULL,
-  ybrk = 3
+  ybrk = 5
 )
 }
 \arguments{
@@ -30,7 +30,7 @@ plot_sealevel(
 
 \item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{ybrk}{numeric, number of y-axis breaks. Default is \code{3}.}
+\item{ybrk}{numeric, number of y-axis breaks. Default is \code{5}.}
 }
 \value{
 a ggplot object

@@ -1,6 +1,9 @@
 ---
 title: "Getting started"
 output: rmarkdown::html_vignette
+bibliography: refs.bib
+date: "`r Sys.Date()`"
+csl: stylefile.csl
 vignette: >
   %\VignetteIndexEntry{Getting started}
   %\VignetteEngine{knitr::rmarkdown}
