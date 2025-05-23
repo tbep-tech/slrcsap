@@ -21,3 +21,12 @@ Load the package in an R session after installation:
 ```r
 library(slrcsap)
 ```
+
+## Contributing
+
+To contribute to this project, please view the [Contributing Guide](https://github.com/tbep-tech/slrcsap/CONTRIBUTING.html))
+
+## Code of Conduct
+
+Please note that the slrcsap project is released with a [Contributor Code of Conduct](https://github.com/tbep-tech/slrcsap/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
