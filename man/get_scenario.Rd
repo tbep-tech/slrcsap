@@ -27,7 +27,7 @@ a data frame with columns for id, scenario, year, SLR in meters, and SLR in feet
 Get Sea Level Rise (SLR) scenario
 }
 \details{
-Information from \url{https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id={gauge}}. Results are SLR in mm and feet for the intermediate low, intermediate, and intermediate high scenarios by default based on recommended scenarios from the Climate Science Advisory Panel.  Full options for scenarios are \code{'Low'}, \code{'IntLow'}, \code{'Int'}, \code{'IntHigh'}, and \code{'High'}. Values for SLR are relative change from 2020.
+Information from \url{https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id={gauge}}. Results are SLR in meters and feet for the intermediate low, intermediate, and intermediate high scenarios by default based on recommended scenarios from the Climate Science Advisory Panel.  Full options for scenarios are \code{'Low'}, \code{'IntLow'}, \code{'Int'}, \code{'IntHigh'}, and \code{'High'}. Values for SLR are relative change from 2020.
 }
 \examples{
 dat <- get_scenario()

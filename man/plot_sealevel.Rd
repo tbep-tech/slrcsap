@@ -11,8 +11,8 @@ plot_sealevel(
   caption = TRUE,
   xrng = NULL,
   xbrk = 10,
-  yrng = c(-1, 1),
-  ybrk = 0.5
+  yrng = NULL,
+  ybrk = 3
 )
 }
 \arguments{
@@ -24,13 +24,13 @@ plot_sealevel(
 
 \item{caption}{logical, add caption with source. Default is \code{TRUE}.}
 
-\item{xrng}{Date, x-axis range. Default is \code{NULL}, which uses the range of the data.}
+\item{xrng}{Date, x-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{xbrk}{numeric, x-axis breaks. Default is \code{10}.}
+\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}.}
 
-\item{yrng}{numeric, y-axis range. Default is \code{c(-1, 1)}.}
+\item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{ybrk}{numeric, y-axis breaks. Default is \code{0.5}.}
+\item{ybrk}{numeric, number of y-axis breaks. Default is \code{3}.}
 }
 \value{
 a ggplot object

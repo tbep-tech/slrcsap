@@ -36,11 +36,99 @@ library(slrcsap)
 
 The package includes two core functions to download data and two core functions to plot data.  The two download functions are `get_sealevel()` and `get_scenario()` to download tidal gauge data and sea level rise scenario data, respectively.  The corresponding plot functions to view data retrieved from the download functions are `plot_sealevel()` and `plot_scenario()`. The content below demonstrates how to use each function, including the optional arguments that can be used to customize the output.
 
-Tidal gauge data is downloaded from the NOAA Tides and Currents website.  The data is available for all NOAA tide gauges, but the package is currently set up to download data for the St. Petersburg, FL gauge (NOAA ID 8726520).  The data is downloaded as a CSV file and then read into R.  The data includes monthly mean sea level (MSL) values from 1947 to the present, including a seasonal correction.
+### Sea level Data
+
+Sea level data is downloaded from the [NOAA Tides and Currents](https://tidesandcurrents.noaa.gov){target="_blank} website.  The data is available for all NOAA tide gauges and is setup to download data for the St. Petersburg, FL gauge (NOAA ID 8726520) by default.  The data is read directly into R from the URL <https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt>.  The data includes monthly mean sea level (MSL) values from 1947 to the present, including a seasonal correction.
 
 ```{r}
-# Download tidal gauge data
-dat <- get_sealevel()
-head(dat)
+# Download sea level data for St. Petersburg
+spsealevel <- get_sealevel()
+head(spsealevel)
 ```
 
+Data for alternative stations can be obtained using the `gauge` argument.  
+
+```{r}
+# Download sea level data for Cedar Key
+cksealevel <- get_sealevel(gauge = 8727520)
+head(cksealevel)
+```
+
+The sea level data can be plotted using the `plot_sealevel()` function.  
+
+```{r, figheight = 3, fig.width = 8}
+# Plot sea level data for St. Petersburg
+plot_sealevel(spsealevel)
+
+# Plot sea level data for Cedar Key
+plot_sealevel(cksealevel)
+```
+
+Various arguments for `plot_sealevel()` can change the appearance of the plot.  Below, the color, units, and x-axis range are modified  
+
+```{r, fig.height = 3, fig.width = 8}
+# Change arguments for the plot
+plot_sealevel(spsealevel, col = 'tomato1', units = 'm', 
+              xrng = as.Date(c('2000-01-01', '2023-01-01')))
+```
+
+The plot is also a `ggplot()` object and can be modified with additional [ggplot2](https://ggplot2.tidyverse.org/){target="_blank"} functions.  Below, the plot is modified to add a title and change the theme.
+
+```{r, fig.height = 3, fig.width = 8}
+# Add a title and change the theme
+library(ggplot2)
+plot_sealevel(spsealevel) +
+  ggtitle('Monthly Mean Sea Level (MSL) at St. Petersburg, FL') +
+  theme_grey()
+```
+
+### Sea Level Rise Scenarios
+
+Sea level rise scenarios can be downloaded using the `get_scenario()` function.  Data are downloaded from the [Interagency Sea Level Rise Scenario Tool](https://sealevel.nasa.gov/task-force-scenario-tool){target="_blank} website. Details of the methods used in this tool are found in the technical report [@sweet2022].  The data are downloaded as an Excel sheet to from the URL <https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520>, set to St. Petersburg, FL by default using regionally corrected NOAA 2022 curves.  Emissions scenarios of NOAA Intermediate Low, Intermediate, and Intermediate High are downloaded by default, as recommended by the Climate Science Advisory Panel.  The data show relative sea level change (RSLC) from 2020 to 2100 for each scenario in meters and feet.
+
+```{r}
+# Download sea level rise scenarios for St. Petersburg
+spscenario <- get_scenario()
+head(spscenario)
+```
+
+Data for alternative locations and scenarios can be obtained using the `id` and `scenario` arguments, respectively.
+
+```{r}
+# Download sea level rise scenarios for Cedar Key
+ckscenario <- get_scenario(id = 428, scenario = c('Low', 'IntLow', 'Int', 'IntHigh', 'High'))
+head(ckscenario)
+```
+
+The sea level rise scenarios can be plotted using the `plot_scenario()` function.  
+
+```{r, fig.height = 4, fig.width = 8}
+# Plot sea level rise scenarios for St. Petersburg
+plot_scenario(spscenario)
+
+# Plot sea level rise scenarios for Cedar Key
+plot_scenario(ckscenario)
+```
+
+Various arguments for `plot_sealevel()` can change the appearance of the plot.  Below, the color ramp, units, and x-axis range are modified  
+
+```{r, fig.height = 4, fig.width = 8}
+# Change arguments for the plot
+plot_scenario(spscenario, cols = c('green', 'blue', 'red'), units = 'm', 
+              xrng = c(2020, 2150))
+```
+
+The plot is also a `ggplot` object and can be modified with additional [ggplot2](https://ggplot2.tidyverse.org/){target="_blank"} functions.  Below, the plot is modified to add a title, subtitle, and change the theme.
+
+```{r, fig.height = 4, fig.width = 8}
+# Add a title, subtitle and change the theme
+plot_scenario(spscenario) +
+  labs(
+    title = 'Relative Sea Level Change Predictions',
+    subtitle = 'Gauge 8726520, St. Petersburg, FL'
+  ) +
+  theme_grey() + 
+  theme(legend.position = 'bottom')
+```
+
+## References

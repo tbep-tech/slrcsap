@@ -10,12 +10,10 @@ plot_scenario(
   units = "ft",
   linewidth = 1,
   caption = TRUE,
-  title = TRUE,
-  subtitle = "Gauge 8726520, St. Petersburg, FL",
   xrng = c(2020, 2100),
   xbrk = 10,
-  yrng = c(0, 6),
-  ybrk = 1
+  yrng = NULL,
+  ybrk = 7
 )
 }
 \arguments{
@@ -29,17 +27,13 @@ plot_scenario(
 
 \item{caption}{logical, add caption with source. Default is \code{TRUE}.}
 
-\item{title}{logical, add title. Default is \code{TRUE}.}
-
-\item{subtitle}{character, subtitle for the plot. Default is \code{'Gauge 8726520, St. Petersburg, FL'}. Use \code{NULL} to omit.}
-
 \item{xrng}{numeric, x-axis range. Default is \code{c(2020, 2100)}.}
 
-\item{xbrk}{numeric, x-axis breaks. Default is \code{10}.}
+\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}.}
 
-\item{yrng}{numeric, y-axis range. Default is \code{c(0, 6)}.}
+\item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data..}
 
-\item{ybrk}{numeric, y-axis breaks. Default is \code{1}.}
+\item{ybrk}{numeric, number of y-axis breaks. Default is \code{7}.}
 }
 \value{
 a ggplot object
