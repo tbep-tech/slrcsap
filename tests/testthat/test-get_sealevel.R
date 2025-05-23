@@ -7,7 +7,7 @@ test_that("get_sealevel returns correct data structure", {
   expect_s3_class(result, "data.frame")
   
   # Check column names
-  expected_cols <- c("gauge", "Year", "Month", "msl_m", "date", "msl_ft")
+  expected_cols <- c("gauge", "Year", "Month", "date", "msl_m", "msl_ft")
   expect_equal(names(result), expected_cols)
   
   # Check that all expected columns are present
