@@ -2,9 +2,9 @@
 #'
 #' @param gauge numeric, gauge number. Default is 8726520 (St. Petersburg, FL).
 #'
-#' @returns a data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.
+#' @returns A data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.
 #' 
-#' @details Information from <https://tidesandcurrents.noaa.gov> using the URL <https://tidesandcurrents.noaa.gov/sltrends/data/{gauge}_meantrend.txt>.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed. 
+#' @details Information from <https://tidesandcurrents.noaa.gov> using the URL <https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt>, by default.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed. 
 #' 
 #' @export
 #'
@@ -22,7 +22,7 @@ get_sealevel <- function(gauge = 8726520){
       date = as.Date(paste(Year, Month, 1), format = '%Y %m %d'),
       msl_ft = msl_m * 3.28084
     ) |> 
-    dplyr::select(gauge, dplyr::everything())
+    dplyr::select(gauge, Year, Month, date, msl_m, msl_ft)
   
   return(out)
 

@@ -24,9 +24,9 @@ library(slrcsap)
 
 ## Contributing
 
-To contribute to this project, please view the [Contributing Guide](https://github.com/tbep-tech/slrcsap/CONTRIBUTING.html))
+To contribute to this project, please view the [Contributing Guide](https://tbep-tech.github.io/slrcsap/CONTRIBUTING.html)
 
 ## Code of Conduct
 
-Please note that the slrcsap project is released with a [Contributor Code of Conduct](https://github.com/tbep-tech/slrcsap/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the slrcsap project is released with a [Contributor Code of Conduct](https://tbep-tech.github.io/slrcsap/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 

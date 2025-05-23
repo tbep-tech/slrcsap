@@ -31,12 +31,12 @@ plot_scenario(
 
 \item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}.}
 
-\item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data..}
+\item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
 \item{ybrk}{numeric, number of y-axis breaks. Default is \code{7}.}
 }
 \value{
-a ggplot object
+A ggplot object
 }
 \description{
 Plot sea level scenario data

@@ -5,9 +5,9 @@
 #' @param method character, download method. Default is `'curl'`, passed to `download.file()`.
 #' @param quiet logical, suppress download messages. Default is `TRUE`.
 #'
-#' @returns a data frame with columns for id, scenario, year, SLR in meters, and SLR in feet.
+#' @returns A data frame with columns for id, scenario, year, SLR in meters, and SLR in feet.
 #' 
-#' @details Information from <https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id={gauge}>. Results are SLR in meters and feet for the intermediate low, intermediate, and intermediate high scenarios by default based on recommended scenarios from the Climate Science Advisory Panel.  Full options for scenarios are `'Low'`, `'IntLow'`, `'Int'`, `'IntHigh'`, and `'High'`. Values for SLR are relative change from 2020.
+#' @details Information from <https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520>, by default. Results are SLR in meters and feet for the intermediate low, intermediate, and intermediate high scenarios based on recommended scenarios from the Climate Science Advisory Panel.  Full options for scenarios are `'Low'`, `'IntLow'`, `'Int'`, `'IntHigh'`, and `'High'`. Values for SLR are relative change from 2020.
 #' 
 #' @export
 #'

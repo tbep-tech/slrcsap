@@ -10,13 +10,13 @@ get_sealevel(gauge = 8726520)
 \item{gauge}{numeric, gauge number. Default is 8726520 (St. Petersburg, FL).}
 }
 \value{
-a data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.
+A data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.
 }
 \description{
 Get monthly Mean Sea Level (MSL) data for selected gauge
 }
 \details{
-Information from \url{https://tidesandcurrents.noaa.gov} using the URL \url{https://tidesandcurrents.noaa.gov/sltrends/data/{gauge}_meantrend.txt}.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed.
+Information from \url{https://tidesandcurrents.noaa.gov} using the URL \url{https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt}, by default.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed.
 }
 \examples{
 dat <- get_sealevel(gauge = 8726520)

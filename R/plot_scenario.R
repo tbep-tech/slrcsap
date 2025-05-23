@@ -7,10 +7,10 @@
 #' @param caption logical, add caption with source. Default is `TRUE`.
 #' @param xrng numeric, x-axis range. Default is `c(2020, 2100)`.
 #' @param xbrk numeric, number of x-axis breaks. Default is `10`.
-#' @param yrng numeric, y-axis range as two values. Default is `NULL`, which uses the range of the data..
+#' @param yrng numeric, y-axis range as two values. Default is `NULL`, which uses the range of the data.
 #' @param ybrk numeric, number of y-axis breaks. Default is `7`.
 #'
-#' @returns a ggplot object
+#' @returns A ggplot object
 #' @export
 #'
 #' @examples
