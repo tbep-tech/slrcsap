@@ -1,3 +1,5 @@
+library(ggplot2)
+
 # Create sample data for testing (mimics get_scenario output)
 create_sample_scenario_data <- function() {
   scenarios <- c("NOAA Intermediate Low", "NOAA Intermediate", "NOAA Intermediate High")

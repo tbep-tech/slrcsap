@@ -1,3 +1,5 @@
+library(ggplot2)
+
 # Create sample data for testing (mimics get_sealevel output)
 create_sample_data <- function() {
   data.frame(
