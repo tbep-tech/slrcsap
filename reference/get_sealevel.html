@@ -33,7 +33,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Get monthly Mean Sea Level (MSL) data for selected gauge</h1>
-      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/v1.2.0/R/get_sealevel.R"><code>R/get_sealevel.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/main/R/get_sealevel.R"><code>R/get_sealevel.R</code></a></small>
       <div class="d-none name"><code>get_sealevel.Rd</code></div>
     </div>
 
@@ -56,24 +56,24 @@
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>a data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.</p>
+    <p>A data frame with columns for gauge, year, month, date, MSL in meters, and MSL in feet.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Information from <a href="https://tidesandcurrents.noaa.gov" class="external-link">https://tidesandcurrents.noaa.gov</a> using the URL <a href="https://tidesandcurrents.noaa.gov/sltrends/data/%7Bgauge%7D_meantrend.txt" class="external-link">https://tidesandcurrents.noaa.gov/sltrends/data/{gauge}_meantrend.txt</a>.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed.</p>
+    <p>Information from <a href="https://tidesandcurrents.noaa.gov" class="external-link">https://tidesandcurrents.noaa.gov</a> using the URL <a href="https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt" class="external-link">https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt</a>, by default.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">get_sealevel</span><span class="op">(</span>gauge <span class="op">=</span> <span class="fl">8726520</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     gauge Year Month  msl_m       date     msl_ft</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 8726520 1947     1 -0.063 1947-01-01 -0.2066929</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 8726520 1947     2 -0.132 1947-02-01 -0.4330709</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 8726520 1947     3 -0.142 1947-03-01 -0.4658793</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 8726520 1947     4 -0.150 1947-04-01 -0.4921260</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 8726520 1947     5 -0.086 1947-05-01 -0.2821522</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 8726520 1947     6 -0.064 1947-06-01 -0.2099738</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     gauge Year Month       date  msl_m     msl_ft</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 8726520 1947     1 1947-01-01 -0.063 -0.2066929</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 8726520 1947     2 1947-02-01 -0.132 -0.4330709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 8726520 1947     3 1947-03-01 -0.142 -0.4658793</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 8726520 1947     4 1947-04-01 -0.150 -0.4921260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 8726520 1947     5 1947-05-01 -0.086 -0.2821522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 8726520 1947     6 1947-06-01 -0.064 -0.2099738</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

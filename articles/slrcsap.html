@@ -60,7 +60,7 @@
             
             <h4 data-toc-skip class="date">2025-05-23</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/v1.2.0/vignettes/slrcsap.Rmd"><code>vignettes/slrcsap.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/tbep-tech/slrcsap/blob/main/vignettes/slrcsap.Rmd"><code>vignettes/slrcsap.Rmd</code></a></small>
       <div class="d-none name"><code>slrcsap.Rmd</code></div>
     </div>
 
@@ -81,49 +81,46 @@ follows. The source code is available on <a href="https://github.com/tbep-tech/s
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The package includes two core functions to download data and two core
-functions to plot data. The two download functions are
-<code><a href="../reference/get_sealevel.html">get_sealevel()</a></code> and <code><a href="../reference/get_scenario.html">get_scenario()</a></code> to download
-tidal gauge data and sea level rise scenario data, respectively. The
-corresponding plot functions to view data retrieved from the download
-functions are <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> and
-<code><a href="../reference/plot_scenario.html">plot_scenario()</a></code>. The content below demonstrates how to use
-each function, including the optional arguments that can be used to
-customize the output.</p>
+<p>The package includes two core workflows to download and plot data
+relevant to assess sea level rise risks in the Tampa Bay region. The
+first workflow retrieves and plots historical sea level data and the
+second retrieves and plots sea level rise scenario data. Default
+arguments for all functions are set for the tidal gauge at <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8726520" target="_blank" class="external-link">St. Petersburg, FL</a>. The content below demonstrates
+how to use the functions in this package for each workflow.</p>
 <div class="section level3">
 <h3 id="sea-level-data">Sea level Data<a class="anchor" aria-label="anchor" href="#sea-level-data"></a>
 </h3>
-<p>Sea level data is downloaded from the <a href="https://tidesandcurrents.noaa.gov" target='"_blank' class="external-link">NOAA
-Tides and Currents</a> website. The data is available for all NOAA tide
+<p>Sea level data are downloaded from the <a href="https://tidesandcurrents.noaa.gov" target='"_blank' class="external-link">NOAA
+Tides and Currents</a> website. The data are available for all NOAA tide
 gauges and is setup to download data for the St. Petersburg, FL gauge
 (NOAA ID 8726520) by default. The data is read directly into R from the
 URL <a href="https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt" class="external-link uri">https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt</a>.
-The data includes monthly mean sea level (MSL) values from 1947 to the
-present, including a seasonal correction.</p>
+The data for St. Petersburg, includes monthly mean sea level (MSL)
+values from 1947 to the present, including a seasonal correction.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Download sea level data for St. Petersburg</span></span>
 <span><span class="va">spsealevel</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">spsealevel</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     gauge Year Month  msl_m       date     msl_ft</span></span>
-<span><span class="co">#&gt; 1 8726520 1947     1 -0.063 1947-01-01 -0.2066929</span></span>
-<span><span class="co">#&gt; 2 8726520 1947     2 -0.132 1947-02-01 -0.4330709</span></span>
-<span><span class="co">#&gt; 3 8726520 1947     3 -0.142 1947-03-01 -0.4658793</span></span>
-<span><span class="co">#&gt; 4 8726520 1947     4 -0.150 1947-04-01 -0.4921260</span></span>
-<span><span class="co">#&gt; 5 8726520 1947     5 -0.086 1947-05-01 -0.2821522</span></span>
-<span><span class="co">#&gt; 6 8726520 1947     6 -0.064 1947-06-01 -0.2099738</span></span></code></pre></div>
+<span><span class="co">#&gt;     gauge Year Month       date  msl_m     msl_ft</span></span>
+<span><span class="co">#&gt; 1 8726520 1947     1 1947-01-01 -0.063 -0.2066929</span></span>
+<span><span class="co">#&gt; 2 8726520 1947     2 1947-02-01 -0.132 -0.4330709</span></span>
+<span><span class="co">#&gt; 3 8726520 1947     3 1947-03-01 -0.142 -0.4658793</span></span>
+<span><span class="co">#&gt; 4 8726520 1947     4 1947-04-01 -0.150 -0.4921260</span></span>
+<span><span class="co">#&gt; 5 8726520 1947     5 1947-05-01 -0.086 -0.2821522</span></span>
+<span><span class="co">#&gt; 6 8726520 1947     6 1947-06-01 -0.064 -0.2099738</span></span></code></pre></div>
 <p>Data for alternative stations can be obtained using the
 <code>gauge</code> argument.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Download sea level data for Cedar Key</span></span>
 <span><span class="va">cksealevel</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span>gauge <span class="op">=</span> <span class="fl">8727520</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">cksealevel</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     gauge Year Month  msl_m       date     msl_ft</span></span>
-<span><span class="co">#&gt; 1 8727520 1914     4 -0.170 1914-04-01 -0.5577428</span></span>
-<span><span class="co">#&gt; 2 8727520 1914     5 -0.161 1914-05-01 -0.5282152</span></span>
-<span><span class="co">#&gt; 3 8727520 1914     6 -0.142 1914-06-01 -0.4658793</span></span>
-<span><span class="co">#&gt; 4 8727520 1914     7 -0.129 1914-07-01 -0.4232284</span></span>
-<span><span class="co">#&gt; 5 8727520 1914     8 -0.098 1914-08-01 -0.3215223</span></span>
-<span><span class="co">#&gt; 6 8727520 1914     9 -0.186 1914-09-01 -0.6102362</span></span></code></pre></div>
+<span><span class="co">#&gt;     gauge Year Month       date  msl_m     msl_ft</span></span>
+<span><span class="co">#&gt; 1 8727520 1914     4 1914-04-01 -0.170 -0.5577428</span></span>
+<span><span class="co">#&gt; 2 8727520 1914     5 1914-05-01 -0.161 -0.5282152</span></span>
+<span><span class="co">#&gt; 3 8727520 1914     6 1914-06-01 -0.142 -0.4658793</span></span>
+<span><span class="co">#&gt; 4 8727520 1914     7 1914-07-01 -0.129 -0.4232284</span></span>
+<span><span class="co">#&gt; 5 8727520 1914     8 1914-08-01 -0.098 -0.3215223</span></span>
+<span><span class="co">#&gt; 6 8727520 1914     9 1914-09-01 -0.186 -0.6102362</span></span></code></pre></div>
 <p>The sea level data can be plotted using the
 <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> function.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -159,14 +156,14 @@ add a title and change the theme.</p>
 </h3>
 <p>Sea level rise scenarios can be downloaded using the
 <code><a href="../reference/get_scenario.html">get_scenario()</a></code> function. Data are downloaded from the <a href="https://sealevel.nasa.gov/task-force-scenario-tool" target='"_blank' class="external-link">Interagency Sea Level Rise Scenario Tool</a>
-website. Details of the methods used in this tool are found in the
-technical report <span class="citation">[1]</span>. The data are
-downloaded as an Excel sheet to from the URL <a href="https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520" class="external-link uri">https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520</a>,
-set to St. Petersburg, FL by default using regionally corrected NOAA
-2022 curves. Emissions scenarios of NOAA Intermediate Low, Intermediate,
-and Intermediate High are downloaded by default, as recommended by the
-Climate Science Advisory Panel. The data show relative sea level change
-(RSLC) from 2020 to 2100 for each scenario in meters and feet.</p>
+website that uses regionally corrected NOAA 2022 curves. Details of the
+methods used in this tool are found in the technical report <span class="citation">[1]</span>. The data are downloaded as an Excel sheet
+to from the URL <a href="https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520" class="external-link uri">https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520</a>,
+set to St. Petersburg, FL by default. Emissions scenarios of NOAA
+Intermediate Low, Intermediate, and Intermediate High are downloaded by
+default, as recommended by the Climate Science Advisory Panel. The data
+show relative sea level change (RSLC) from 2020 to 2150 for each
+scenario in meters and feet.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Download sea level rise scenarios for St. Petersburg</span></span>
 <span><span class="va">spscenario</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_scenario.html">get_scenario</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -197,7 +194,8 @@ respectively.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>060 0.301  0.988</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>070 0.340  1.12</span></span></code></pre></div>
 <p>The sea level rise scenarios can be plotted using the
-<code><a href="../reference/plot_scenario.html">plot_scenario()</a></code> function.</p>
+<code><a href="../reference/plot_scenario.html">plot_scenario()</a></code> function. Note the default x-axis range
+that extends only to 2100.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot sea level rise scenarios for St. Petersburg</span></span>
 <span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">spscenario</span><span class="op">)</span></span></code></pre></div>
@@ -207,7 +205,7 @@ respectively.</p>
 <span><span class="co"># Plot sea level rise scenarios for Cedar Key</span></span>
 <span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">ckscenario</span><span class="op">)</span></span></code></pre></div>
 <p><img src="slrcsap_files/figure-html/unnamed-chunk-11-2.png" width="768" style="display: block; margin: auto;"></p>
-<p>Various arguments for <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> can change the
+<p>Various arguments for <code><a href="../reference/plot_scenario.html">plot_scenario()</a></code> can change the
 appearance of the plot. Below, the color ramp, units, and x-axis range
 are modified</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
@@ -215,7 +213,7 @@ are modified</p>
 <span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">spscenario</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'red'</span><span class="op">)</span>, units <span class="op">=</span> <span class="st">'m'</span>, </span>
 <span>              xrng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2020</span>, <span class="fl">2150</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="slrcsap_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;"></p>
-<p>The plot is also a <code>ggplot</code> object and can be modified
+<p>The plot is also a <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> object and can be modified
 with additional <a href="https://ggplot2.tidyverse.org/" target="_blank" class="external-link">ggplot2</a> functions. Below, the plot is modified to
 add a title, subtitle, and change the theme.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
