@@ -1,9 +1,12 @@
 # slrcsap
 
+<!-- badges: start -->
 [![R-CMD-check](https://github.com/tbep-tech/slrcsap/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tbep-tech/slrcsap/actions)
 [![pkgdown](https://github.com/tbep-tech/slrcsap/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/tbep-tech/slrcsap/actions)
 [![codecov](https://codecov.io/gh/tbep-tech/slrcsap/graph/badge.svg?token=b4ssUs1EcZ)](https://codecov.io/gh/tbep-tech/slrcsap)
+[![slrcsap status badge](https://tbep-tech.r-universe.dev/slrcsap/badges/version)](https://tbep-tech.r-universe.dev/slrcsap)
 [![DOI](https://zenodo.org/badge/984378351.svg)](https://doi.org/10.5281/zenodo.15481861)
+<!-- badges: end -->
 
 R package to create projections of sea level rise for the Tampa Bay region recommended by the Climate Science Advisory Panel
 
