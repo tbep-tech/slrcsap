@@ -89,16 +89,20 @@ functions are <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a
 <code><a href="../reference/plot_scenario.html">plot_scenario()</a></code>. The content below demonstrates how to use
 each function, including the optional arguments that can be used to
 customize the output.</p>
-<p>Tidal gauge data is downloaded from the NOAA Tides and Currents
-website. The data is available for all NOAA tide gauges, but the package
-is currently set up to download data for the St. Petersburg, FL gauge
-(NOAA ID 8726520). The data is downloaded as a CSV file and then read
-into R. The data includes monthly mean sea level (MSL) values from 1947
-to the present, including a seasonal correction.</p>
+<div class="section level3">
+<h3 id="sea-level-data">Sea level Data<a class="anchor" aria-label="anchor" href="#sea-level-data"></a>
+</h3>
+<p>Sea level data is downloaded from the <a href="https://tidesandcurrents.noaa.gov" target='"_blank' class="external-link">NOAA
+Tides and Currents</a> website. The data is available for all NOAA tide
+gauges and is setup to download data for the St. Petersburg, FL gauge
+(NOAA ID 8726520) by default. The data is read directly into R from the
+URL <a href="https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt" class="external-link uri">https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt</a>.
+The data includes monthly mean sea level (MSL) values from 1947 to the
+present, including a seasonal correction.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Download tidal gauge data</span></span>
-<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># Download sea level data for St. Petersburg</span></span>
+<span><span class="va">spsealevel</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">spsealevel</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     gauge Year Month  msl_m       date     msl_ft</span></span>
 <span><span class="co">#&gt; 1 8726520 1947     1 -0.063 1947-01-01 -0.2066929</span></span>
 <span><span class="co">#&gt; 2 8726520 1947     2 -0.132 1947-02-01 -0.4330709</span></span>
@@ -106,6 +110,128 @@ to the present, including a seasonal correction.</p>
 <span><span class="co">#&gt; 4 8726520 1947     4 -0.150 1947-04-01 -0.4921260</span></span>
 <span><span class="co">#&gt; 5 8726520 1947     5 -0.086 1947-05-01 -0.2821522</span></span>
 <span><span class="co">#&gt; 6 8726520 1947     6 -0.064 1947-06-01 -0.2099738</span></span></code></pre></div>
+<p>Data for alternative stations can be obtained using the
+<code>gauge</code> argument.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Download sea level data for Cedar Key</span></span>
+<span><span class="va">cksealevel</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_sealevel.html">get_sealevel</a></span><span class="op">(</span>gauge <span class="op">=</span> <span class="fl">8727520</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">cksealevel</span><span class="op">)</span></span>
+<span><span class="co">#&gt;     gauge Year Month  msl_m       date     msl_ft</span></span>
+<span><span class="co">#&gt; 1 8727520 1914     4 -0.170 1914-04-01 -0.5577428</span></span>
+<span><span class="co">#&gt; 2 8727520 1914     5 -0.161 1914-05-01 -0.5282152</span></span>
+<span><span class="co">#&gt; 3 8727520 1914     6 -0.142 1914-06-01 -0.4658793</span></span>
+<span><span class="co">#&gt; 4 8727520 1914     7 -0.129 1914-07-01 -0.4232284</span></span>
+<span><span class="co">#&gt; 5 8727520 1914     8 -0.098 1914-08-01 -0.3215223</span></span>
+<span><span class="co">#&gt; 6 8727520 1914     9 -0.186 1914-09-01 -0.6102362</span></span></code></pre></div>
+<p>The sea level data can be plotted using the
+<code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> function.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Plot sea level data for St. Petersburg</span></span>
+<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">spsealevel</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Plot sea level data for Cedar Key</span></span>
+<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">cksealevel</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-6-2.png" width="768" style="display: block; margin: auto;"></p>
+<p>Various arguments for <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> can change the
+appearance of the plot. Below, the color, units, and x-axis range are
+modified</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Change arguments for the plot</span></span>
+<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">spsealevel</span>, col <span class="op">=</span> <span class="st">'tomato1'</span>, units <span class="op">=</span> <span class="st">'m'</span>, </span>
+<span>              xrng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2000-01-01'</span>, <span class="st">'2023-01-01'</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;"></p>
+<p>The plot is also a <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> object and can be modified
+with additional <a href="https://ggplot2.tidyverse.org/" target="_blank" class="external-link">ggplot2</a> functions. Below, the plot is modified to
+add a title and change the theme.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Add a title and change the theme</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plot_sealevel.html">plot_sealevel</a></span><span class="op">(</span><span class="va">spsealevel</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">'Monthly Mean Sea Level (MSL) at St. Petersburg, FL'</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_grey</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;"></p>
+</div>
+<div class="section level3">
+<h3 id="sea-level-rise-scenarios">Sea Level Rise Scenarios<a class="anchor" aria-label="anchor" href="#sea-level-rise-scenarios"></a>
+</h3>
+<p>Sea level rise scenarios can be downloaded using the
+<code><a href="../reference/get_scenario.html">get_scenario()</a></code> function. Data are downloaded from the <a href="https://sealevel.nasa.gov/task-force-scenario-tool" target='"_blank' class="external-link">Interagency Sea Level Rise Scenario Tool</a>
+website. Details of the methods used in this tool are found in the
+technical report <span class="citation">[@sweet2022]</span>. The data
+are downloaded as an Excel sheet to from the URL <a href="https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520" class="external-link uri">https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520</a>,
+set to St. Petersburg, FL by default using regionally corrected NOAA
+2022 curves. Emissions scenarios of NOAA Intermediate Low, Intermediate,
+and Intermediate High are downloaded by default, as recommended by the
+Climate Science Advisory Panel. The data show relative sea level change
+(RSLC) from 2020 to 2100 for each scenario in meters and feet.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Download sea level rise scenarios for St. Petersburg</span></span>
+<span><span class="va">spscenario</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_scenario.html">get_scenario</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">spscenario</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 5</span></span></span>
+<span><span class="co">#&gt;      id scenario               year slr_m slr_ft</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>020 0.113  0.372</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>030 0.180  0.592</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>040 0.250  0.821</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>050 0.322  1.06 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>060 0.392  1.29 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>   520 NOAA Intermediate Low  <span style="text-decoration: underline;">2</span>070 0.463  1.52</span></span></code></pre></div>
+<p>Data for alternative locations and scenarios can be obtained using
+the <code>id</code> and <code>scenario</code> arguments,
+respectively.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Download sea level rise scenarios for Cedar Key</span></span>
+<span><span class="va">ckscenario</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_scenario.html">get_scenario</a></span><span class="op">(</span>id <span class="op">=</span> <span class="fl">428</span>, scenario <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'Low'</span>, <span class="st">'IntLow'</span>, <span class="st">'Int'</span>, <span class="st">'IntHigh'</span>, <span class="st">'High'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">ckscenario</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 5</span></span></span>
+<span><span class="co">#&gt;      id scenario  year slr_m slr_ft</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>020 0.101  0.332</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>030 0.153  0.502</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>040 0.207  0.679</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>050 0.258  0.847</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>060 0.301  0.988</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>   428 NOAA Low  <span style="text-decoration: underline;">2</span>070 0.340  1.12</span></span></code></pre></div>
+<p>The sea level rise scenarios can be plotted using the
+<code><a href="../reference/plot_scenario.html">plot_scenario()</a></code> function.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Plot sea level rise scenarios for St. Petersburg</span></span>
+<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">spscenario</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-11-1.png" width="768" style="display: block; margin: auto;"></p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Plot sea level rise scenarios for Cedar Key</span></span>
+<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">ckscenario</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-11-2.png" width="768" style="display: block; margin: auto;"></p>
+<p>Various arguments for <code><a href="../reference/plot_sealevel.html">plot_sealevel()</a></code> can change the
+appearance of the plot. Below, the color ramp, units, and x-axis range
+are modified</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Change arguments for the plot</span></span>
+<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">spscenario</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'red'</span><span class="op">)</span>, units <span class="op">=</span> <span class="st">'m'</span>, </span>
+<span>              xrng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2020</span>, <span class="fl">2150</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;"></p>
+<p>The plot is also a <code>ggplot</code> object and can be modified
+with additional <a href="https://ggplot2.tidyverse.org/" target="_blank" class="external-link">ggplot2</a> functions. Below, the plot is modified to
+add a title, subtitle, and change the theme.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Add a title, subtitle and change the theme</span></span>
+<span><span class="fu"><a href="../reference/plot_scenario.html">plot_scenario</a></span><span class="op">(</span><span class="va">spscenario</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">'Relative Sea Level Change Predictions'</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">'Gauge 8726520, St. Petersburg, FL'</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_grey</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">'bottom'</span><span class="op">)</span></span></code></pre></div>
+<p><img src="slrcsap_files/figure-html/unnamed-chunk-13-1.png" width="768" style="display: block; margin: auto;"></p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
