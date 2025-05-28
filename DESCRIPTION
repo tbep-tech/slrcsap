@@ -1,5 +1,5 @@
 Package: slrcsap
-Title: Lightweight Tools to Create Sea Level Rise Predictions for the Tampa Bay Region
+Title: Lightweight Tools to Create Sea Level Rise Projections for the Tampa Bay Region
 Version: 1.3.0
 Authors@R: c(
     person(given = "Marcus",
@@ -9,7 +9,7 @@ Authors@R: c(
       comment = c(ORCID = "0000-0002-4996-0059")
     )
   )
-Description: Lightweight tools to download data and create plots for sea level rise predictions
+Description: Lightweight tools to download data and create plots for sea level rise projections
   in the Tampa Bay region.  Plots are produced to support recommendations of the Climate Science
   Advisory Panel facilitated by the Tampa Bay Estuary Program.  Data are from NOAA Tides and 
   Currents web page <https://tidesandcurrents.noaa.gov/> and the Interagency Sea Level Rise 
