@@ -127,7 +127,7 @@ The plot is also a `ggplot()` object and can be modified with additional [ggplot
 # Add a title, subtitle and change the theme
 plot_scenario(spscenario) +
   labs(
-    title = 'Relative Sea Level Change Predictions',
+    title = 'Relative Sea Level Change Projections',
     subtitle = 'Gauge 8726520, St. Petersburg, FL'
   ) +
   theme_grey() + 
