@@ -51,7 +51,8 @@
 <span>  xrng <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2020</span>, <span class="fl">2100</span><span class="op">)</span>,</span>
 <span>  xbrk <span class="op">=</span> <span class="fl">10</span>,</span>
 <span>  yrng <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  ybrk <span class="op">=</span> <span class="fl">7</span></span>
+<span>  ybrk <span class="op">=</span> <span class="fl">7</span>,</span>
+<span>  plotly <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -76,7 +77,7 @@
 
 
 <dt id="arg-caption">caption<a class="anchor" aria-label="anchor" href="#arg-caption"></a></dt>
-<dd><p>logical, add caption with source. Default is <code>TRUE</code>.</p></dd>
+<dd><p>logical, add caption with source. Default is <code>TRUE</code>. Does not apply if <code>plotly = TRUE</code>.</p></dd>
 
 
 <dt id="arg-xrng">xrng<a class="anchor" aria-label="anchor" href="#arg-xrng"></a></dt>
@@ -84,7 +85,7 @@
 
 
 <dt id="arg-xbrk">xbrk<a class="anchor" aria-label="anchor" href="#arg-xbrk"></a></dt>
-<dd><p>numeric, number of x-axis breaks. Default is <code>10</code>.</p></dd>
+<dd><p>numeric, number of x-axis breaks. Default is <code>10</code>. Does not apply if <code>plotly = TRUE</code>.</p></dd>
 
 
 <dt id="arg-yrng">yrng<a class="anchor" aria-label="anchor" href="#arg-yrng"></a></dt>
@@ -92,7 +93,11 @@
 
 
 <dt id="arg-ybrk">ybrk<a class="anchor" aria-label="anchor" href="#arg-ybrk"></a></dt>
-<dd><p>numeric, number of y-axis breaks. Default is <code>7</code>.</p></dd>
+<dd><p>numeric, number of y-axis breaks. Default is <code>7</code>. Does not apply if <code>plotly = TRUE</code>.</p></dd>
+
+
+<dt id="arg-plotly">plotly<a class="anchor" aria-label="anchor" href="#arg-plotly"></a></dt>
+<dd><p>logical, if <code>TRUE</code>, returns a plotly object instead of ggplot. Default is <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
