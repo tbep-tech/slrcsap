@@ -121,3 +121,15 @@ test_that("plot_scenario handles y-axis range parameter", {
   y_limits <- built_plot$layout$panel_scales_y[[1]]$limits
   expect_equal(y_limits, custom_yrng)
 })
+
+test_that("plot_scenario handles plotly output", {
+  
+  dat <- create_sample_scenario_data()
+  
+  # Test plotly output
+  p_plotly <- plot_scenario(dat, plotly = TRUE)
+  
+  # Check that result is a plotly object
+  expect_true(inherits(p_plotly, "plotly"))
+  
+})

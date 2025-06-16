@@ -89,3 +89,13 @@ test_that("plot_sealevel handles y-axis range parameter", {
   y_limits <- built_plot$layout$panel_scales_y[[1]]$limits
   expect_equal(y_limits, custom_yrng)
 })
+
+test_that("plot_sealevel handles plotly output", {
+  
+  dat <- create_sample_data()
+  
+  # Test with plotly output
+  p_plotly <- plot_sealevel(dat, plotly = TRUE)
+  expect_s3_class(p_plotly, "plotly")
+  
+})

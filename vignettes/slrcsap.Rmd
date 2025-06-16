@@ -85,6 +85,13 @@ plot_sealevel(spsealevel) +
   theme_grey()
 ```
 
+Lastly, the plot can also be returned as a `plotly` object using `plotly = T`. 
+
+```{r, fig.height = 3, fig.width = 8}
+# Create plotly output
+plot_sealevel(spsealevel, plotly = T)
+```
+
 ### Sea Level Rise Scenarios
 
 Sea level rise scenarios can be downloaded using the `get_scenario()` function.  Data are downloaded from the [Interagency Sea Level Rise Scenario Tool](https://sealevel.nasa.gov/task-force-scenario-tool){target="_blank} website that uses regionally corrected NOAA 2022 curves. Details of the methods used in this tool are found in the technical report [@sweet2022].  The data are downloaded as an Excel sheet to from the URL <https://sealevel.nasa.gov/task-force-scenario-tool?psmsl_id=520>, set to St. Petersburg, FL by default.  Emissions scenarios of NOAA Intermediate Low, Intermediate, and Intermediate High are downloaded by default, as recommended by the Climate Science Advisory Panel.  The data show relative sea level change (RSLC) from 2020 to 2150 for each scenario in meters and feet.
@@ -132,6 +139,13 @@ plot_scenario(spscenario) +
   ) +
   theme_grey() + 
   theme(legend.position = 'bottom')
+```
+
+Lastly, the plot can also be returned as a `plotly` object using `plotly = T`. 
+
+```{r, fig.height = 3, fig.width = 8}
+# Create plotly output
+plot_scenario(spscenario, plotly = T)
 ```
 
 ## References

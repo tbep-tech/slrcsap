@@ -13,7 +13,8 @@ plot_scenario(
   xrng = c(2020, 2100),
   xbrk = 10,
   yrng = NULL,
-  ybrk = 7
+  ybrk = 7,
+  plotly = FALSE
 )
 }
 \arguments{
@@ -25,15 +26,17 @@ plot_scenario(
 
 \item{linewidth}{numeric, line width. Default is \code{1}.}
 
-\item{caption}{logical, add caption with source. Default is \code{TRUE}.}
+\item{caption}{logical, add caption with source. Default is \code{TRUE}. Does not apply if \code{plotly = TRUE}.}
 
 \item{xrng}{numeric, x-axis range. Default is \code{c(2020, 2100)}.}
 
-\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}.}
+\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}. Does not apply if \code{plotly = TRUE}.}
 
 \item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{ybrk}{numeric, number of y-axis breaks. Default is \code{7}.}
+\item{ybrk}{numeric, number of y-axis breaks. Default is \code{7}. Does not apply if \code{plotly = TRUE}.}
+
+\item{plotly}{logical, if \code{TRUE}, returns a plotly object instead of ggplot. Default is \code{FALSE}.}
 }
 \value{
 A ggplot object

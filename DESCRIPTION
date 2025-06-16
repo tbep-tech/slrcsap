@@ -23,6 +23,7 @@ Depends:
 Imports:
   dplyr,
   ggplot2,
+  plotly,
   readxl,
   scales, 
   tidyr

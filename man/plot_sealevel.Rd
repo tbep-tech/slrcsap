@@ -12,7 +12,8 @@ plot_sealevel(
   xrng = NULL,
   xbrk = 10,
   yrng = NULL,
-  ybrk = 5
+  ybrk = 5,
+  plotly = FALSE
 )
 }
 \arguments{
@@ -22,15 +23,17 @@ plot_sealevel(
 
 \item{units}{character, units for the y-axis. Default is \code{'ft'}. Options are \code{'ft'} and \code{'m'}.}
 
-\item{caption}{logical, add caption with source. Default is \code{TRUE}.}
+\item{caption}{logical, add caption with source. Default is \code{TRUE}. Does not apply if \code{plotly = TRUE}.}
 
 \item{xrng}{Date, x-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}.}
+\item{xbrk}{numeric, number of x-axis breaks. Default is \code{10}. Does not apply if \code{plotly = TRUE}.}
 
 \item{yrng}{numeric, y-axis range as two values. Default is \code{NULL}, which uses the range of the data.}
 
-\item{ybrk}{numeric, number of y-axis breaks. Default is \code{5}.}
+\item{ybrk}{numeric, number of y-axis breaks. Default is \code{5}. Does not apply if \code{plotly = TRUE}.}
+
+\item{plotly}{logical, if \code{TRUE}, returns a plotly object instead of ggplot. Default is \code{FALSE}.}
 }
 \value{
 a ggplot object
