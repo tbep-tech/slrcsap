@@ -52,7 +52,7 @@ plot_sealevel <- function(dat, col = 'deepskyblue', units = 'ft', caption = TRUE
         line = list(color = col),
         hoverinfo = 'text',
         text = ~paste0('Date: ', date, '<br>Sea Level: ', round(yvl, 2), ' ', units)
-      ) %>%
+      ) |>
       plotly::layout(
         xaxis = list(title = '', range = xrng),
         yaxis = list(title = ylab, range = yrng),
