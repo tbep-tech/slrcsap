@@ -8,7 +8,7 @@
 [![DOI](https://zenodo.org/badge/984378351.svg)](https://doi.org/10.5281/zenodo.15481861)
 <!-- badges: end -->
 
-R package to create projections of sea level rise for the Tampa Bay region recommended by the Climate Science Advisory Panel.
+R package to create projections of sea level rise for the Tampa Bay region recommended by the Climate Science Advisory Panel, report available [here](https://drive.google.com/file/d/1ocnPh3eRCPGkp0LwrUaIXb5SU6mNq_YR/view).
 
 ## Installation
 
