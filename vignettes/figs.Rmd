@@ -26,7 +26,7 @@ library(slrcsap)
 library(ggplot2)
 ```
 
-This vignette provides two figures that support the 2025 update of sea level rise projections for the Tampa Bay region.  The report was created by the Climate Science Advisory Panel (CSAP) to update recommendations from the previous report @tbep0519.  
+This vignette provides two figures that support the 2025 update of sea level rise projections for the Tampa Bay region.  The report [@tbep1425] was created by the Climate Science Advisory Panel (CSAP) to update recommendations from the previous report @tbep0519.  
 
 The first figure shows mean monthly sea level at the St. Petersburg, FL tide gauge, with the seasonal cycle removed. Download the figure [here](https://tbep-tech.github.io/slrcsap/articles/figs_files/figure-html/sealevelplot-1.png).
 
