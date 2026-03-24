@@ -14,8 +14,8 @@
 get_sealevel <- function(gauge = 8726520){
   
   url <- paste0('https://tidesandcurrents.noaa.gov/sltrends/data/', gauge, '_meantrend.txt')
-  
-  out <- read.table(url, skip = 6, sep = '', header = F) |> 
+
+  out <- read.table(url, skip = 6, sep = '', header = F, fill = TRUE) |> 
     dplyr::select(Year = V1, Month = V2, msl_m = V3) |> 
     dplyr::mutate(
       gauge = !!gauge,
