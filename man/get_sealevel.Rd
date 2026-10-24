@@ -16,7 +16,7 @@ A data frame with columns for gauge, year, month, date, MSL in meters, and MSL i
 Get monthly Mean Sea Level (MSL) data for selected gauge
 }
 \details{
-Information from \url{https://tidesandcurrents.noaa.gov} using the URL \url{https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt}, by default.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed.
+Information from \url{https://tidesandcurrents.noaa.gov/trends-and-extremes/} using the NOAA CO-OPS Derived Product API \url{https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8726520&details=monthlymeans&units=metric&trendType=single}, by default.  Results are monthly Mean Sea Level (MSL) in meters and feet, with the seasonal cycle removed. Months with no data are not returned.
 }
 \examples{
 dat <- get_sealevel(gauge = 8726520)

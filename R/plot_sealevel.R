@@ -77,7 +77,7 @@ plot_sealevel <- function(dat, col = 'deepskyblue', units = 'ft', caption = TRUE
       )
   
     if(caption){
-      cp <- paste0('Source: https://tidesandcurrents.noaa.gov/sltrends/data/', unique(dat$gauge), '_meantrend.txt')
+      cp <- paste0('Source: https://tidesandcurrents.noaa.gov/trends-and-extremes/main-product.html?stationId=', unique(dat$gauge))
       p <- p + 
         ggplot2::labs(caption = cp) 
     }
