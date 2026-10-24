@@ -8,6 +8,7 @@ source code is available on
 [GitHub](https://github.com/tbep-tech/slrcsap).
 
 ``` r
+
 # Install slrcsap in R:
 install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https://cloud.r-project.org'))
 ```
@@ -15,6 +16,7 @@ install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https
 Load the package in an R session after installation:
 
 ``` r
+
 library(slrcsap)
 ```
 
@@ -37,12 +39,13 @@ Sea level data are downloaded from the [NOAA Tides and
 Currents](https://tidesandcurrents.noaa.gov) website. The data are
 available for all NOAA tide gauges and is setup to download data for the
 St. Petersburg, FL gauge (NOAA ID 8726520) by default. The data is read
-directly into R from the URL
-<https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt>.
+directly into R from the NOAA CO-OPS Derived Product API at
+<https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8726520&details=monthlymeans&units=metric&trendType=single>.
 The data for St. Petersburg, includes monthly mean sea level (MSL)
 values from 1947 to the present, including a seasonal correction.
 
 ``` r
+
 # Download sea level data for St. Petersburg
 spsealevel <- get_sealevel()
 head(spsealevel)
@@ -59,6 +62,7 @@ Data for alternative stations can be obtained using the `gauge`
 argument.
 
 ``` r
+
 # Download sea level data for Cedar Key
 cksealevel <- get_sealevel(gauge = 8727520)
 head(cksealevel)
@@ -76,6 +80,7 @@ The sea level data can be plotted using the
 function.
 
 ``` r
+
 # Plot sea level data for St. Petersburg
 plot_sealevel(spsealevel)
 ```
@@ -83,6 +88,7 @@ plot_sealevel(spsealevel)
 ![](slrcsap_files/figure-html/unnamed-chunk-6-1.png)
 
 ``` r
+
 
 # Plot sea level data for Cedar Key
 plot_sealevel(cksealevel)
@@ -96,6 +102,7 @@ can change the appearance of the plot. Below, the color, units, and
 x-axis range are modified
 
 ``` r
+
 # Change arguments for the plot
 plot_sealevel(spsealevel, col = 'tomato1', units = 'm', 
               xrng = as.Date(c('2000-01-01', '2023-01-01')))
@@ -110,6 +117,7 @@ and can be modified with additional
 modified to add a title and change the theme.
 
 ``` r
+
 # Add a title and change the theme
 library(ggplot2)
 plot_sealevel(spsealevel) +
@@ -123,6 +131,7 @@ Lastly, the plot can also be returned as a `plotly` object using
 `plotly = T`.
 
 ``` r
+
 # Create plotly output
 plot_sealevel(spsealevel, plotly = T)
 ```
@@ -144,6 +153,7 @@ show relative sea level change (RSLC) from 2020 to 2150 for each
 scenario in meters and feet.
 
 ``` r
+
 # Download sea level rise scenarios for St. Petersburg
 spscenario <- get_scenario()
 head(spscenario)
@@ -162,6 +172,7 @@ Data for alternative locations and scenarios can be obtained using the
 `id` and `scenario` arguments, respectively.
 
 ``` r
+
 # Download sea level rise scenarios for Cedar Key
 ckscenario <- get_scenario(id = 428, scenario = c('Low', 'IntLow', 'Int', 'IntHigh', 'High'))
 head(ckscenario)
@@ -181,6 +192,7 @@ The sea level rise scenarios can be plotted using the
 function. Note the default x-axis range that extends only to 2100.
 
 ``` r
+
 # Plot sea level rise scenarios for St. Petersburg
 plot_scenario(spscenario)
 ```
@@ -188,6 +200,7 @@ plot_scenario(spscenario)
 ![](slrcsap_files/figure-html/unnamed-chunk-12-1.png)
 
 ``` r
+
 
 # Plot sea level rise scenarios for Cedar Key
 plot_scenario(ckscenario)
@@ -201,6 +214,7 @@ can change the appearance of the plot. Below, the color ramp, units, and
 x-axis range are modified
 
 ``` r
+
 # Change arguments for the plot
 plot_scenario(spscenario, cols = c('green', 'blue', 'red'), units = 'm', 
               xrng = c(2020, 2150))
@@ -215,6 +229,7 @@ and can be modified with additional
 modified to add a title, subtitle, and change the theme.
 
 ``` r
+
 # Add a title, subtitle and change the theme
 plot_scenario(spscenario) +
   labs(
@@ -231,6 +246,7 @@ Lastly, the plot can also be returned as a `plotly` object using
 `plotly = T`.
 
 ``` r
+
 # Create plotly output
 plot_scenario(spscenario, plotly = T)
 ```

@@ -21,10 +21,12 @@ and MSL in feet.
 
 ## Details
 
-Information from <https://tidesandcurrents.noaa.gov> using the URL
-<https://tidesandcurrents.noaa.gov/sltrends/data/8726520_meantrend.txt>,
+Information from
+<https://tidesandcurrents.noaa.gov/trends-and-extremes/> using the NOAA
+CO-OPS Derived Product API
+<https://api.tidesandcurrents.noaa.gov/dpapi/prod/webapi/product/sealvltrends.json?station=8726520&details=monthlymeans&units=metric&trendType=single>,
 by default. Results are monthly Mean Sea Level (MSL) in meters and feet,
-with the seasonal cycle removed.
+with the seasonal cycle removed. Months with no data are not returned.
 
 ## Examples
 

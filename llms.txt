@@ -13,6 +13,7 @@ source code is available on
 [GitHub](https://github.com/tbep-tech/slrcsap).
 
 ``` r
+
 # Install slrcsap in R:
 install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https://cloud.r-project.org'))
 ```
@@ -20,6 +21,7 @@ install.packages('slrcsap', repos = c('https://tbep-tech.r-universe.dev', 'https
 Load the package in an R session after installation:
 
 ``` r
+
 library(slrcsap)
 ```
 
