@@ -37,7 +37,7 @@ library(slrcsap)
 
 ## Usage
 
-The package includes two core workflows to download and plot data relevant to assess sea level rise risks in the Tampa Bay region.  The first workflow retrieves and plots historical sea level data and the second retrieves and plots sea level rise scenario data.  Default arguments for all functions are set for the tidal gauge at [St. Petersburg, FL](https://tidesandcurrents.noaa.gov/stationhome.html?id=8726520){target="_blank"}. The content below demonstrates how to use the functions in this package for each workflow.
+The package includes two core workflows to download and plot data relevant to assess sea level rise risks in the Tampa Bay region.  The first workflow retrieves and plots historical sea level data and the second retrieves and plots sea level rise scenario data.  Default arguments for all functions are set for the tidal gauge at [St. Petersburg, FL](https://tidesandcurrents.noaa.gov/stationhome.html?id=8726520){target="_blank"} following recommendations from the Tampa Bay Climate Science Advisory Panel [@tbep1425]. The content below demonstrates how to use the functions in this package for each workflow.
 
 ### Sea level Data
 
